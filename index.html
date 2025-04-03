@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hacer que la página sea responsive -->
+    <title>rock-paper-scissors-V2</title> <!-- Título de la página -->
+    <link rel="stylesheet" href="style.css"> <!-- Enlace al archivo de estilos CSS -->
+</head>
+<body>
+    
+    <div class="container"> <!-- Contenedor principal -->
+        <header>
+            <h2>Rock, Paper or Scissor:</h2> <!-- Título del juego -->
+        </header>
+
+        <div class="scoreboard"> <!-- Sección del marcador -->
+            <div class="score">
+                <span id="user-score">0</span> <!-- Puntaje del usuario -->
+                <span>User</span> <!-- Etiqueta para el usuario -->
+            </div>
+
+            <div class="score">
+                <span id="computer-score">0</span> <!-- Puntaje de la computadora -->
+                <span>Computer</span> <!-- Etiqueta para la computadora -->
+            </div>
+        </div>
+
+        <div class="result"> <!-- Sección para mostrar el resultado de cada ronda -->
+            <h2 id="result-message">Choose an option to start:</h2> <!-- Mensaje inicial -->
+        </div>
+
+        <div class="choices"> <!-- Sección de las opciones del juego -->
+            <!-- Opción: Piedra -->
+            <div class="choice" id="rock">
+                <img src="assets/icons/rock-hand.png" alt="rock-hand"> <!-- Imagen de la opción -->
+                <span>Rock</span> <!-- Etiqueta de la opción -->
+            </div>
+
+            <!-- Opción: Papel -->
+            <div class="choice" id="paper">
+                <img src="assets/icons/hand-paper.png" alt="Paper-hand"> <!-- Imagen de la opción -->
+                <span>Paper</span> <!-- Etiqueta de la opción -->
+            </div>
+
+            <!-- Opción: Tijeras -->
+            <div class="choice" id="scissors">
+                <img src="assets/icons/scissors-hand.png" alt="scissors-hand"> <!-- Imagen de la opción -->
+                <span>Scissors</span> <!-- Etiqueta de la opción -->
+            </div>
+        </div>
+
+        <div class="game-history"> <!-- Sección del historial del juego -->
+            <h3>Game History</h3> <!-- Título del historial -->
+            <table class="history-table"> <!-- Tabla para mostrar el historial -->
+                <thead>
+                    <tr>
+                        <th>Round</th> <!-- Columna: Número de ronda -->
+                        <th>User Choice</th> <!-- Columna: Elección del usuario -->
+                        <th>Computer Choice</th> <!-- Columna: Elección de la computadora -->
+                        <th>Result</th> <!-- Columna: Resultado de la ronda -->
+                    </tr>
+                </thead>
+
+                <tbody id="history-body"> <!-- Cuerpo de la tabla donde se agregarán las filas dinámicamente -->
+                </tbody>
+            </table>
+            <button id="clear-history">Clear History</button> <!-- Botón para limpiar el historial -->
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Enlace al archivo JavaScript -->
+</body>
+</html>

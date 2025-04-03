@@ -1,0 +1,299 @@
+/* CSS Document */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Refined Pastel Color Palette for Minimalism */
+:root {
+    /* Base colors - soft pastels */
+    --background: #f8f9fa;           /* Very light background */
+    --main-text: #495057;            /* Soft dark gray for text */
+    --secondary-text: #6c757d;       /* Lighter gray for secondary text */
+    --accent-blue: #90caf9;          /* Soft pastel blue */
+    --accent-mint: #a8e6cf;          /* Soft mint green */
+    
+    /* Hover states */
+    --hover-button: #81c3f3;         /* Slightly deeper blue for hover */
+
+    /* Status colors - soft pastels */
+    --win-color: #a8e6cf;            /* Pastel green for wins */
+    --lose-color: #ffafcc;           /* Pastel pink for losses */
+    --draw-color: #fdffb6;           /* Pastel yellow for draws */
+    
+    /* Backgrounds */
+    --card-bg: #ffffff;              /* Pure white card background */
+    --highlight-bg: rgba(144, 202, 249, 0.05);  /* Very subtle highlight */
+    
+    /* Borders and shadows */
+    --subtle-border: rgba(108, 117, 125, 0.1);  /* Subtle borders */
+    --glow-shadow: 0 0 15px rgba(144, 202, 249, 0.2); /* Subtle blue glow */
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Soft shadow */
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fde2e4, #a8e6cf, #d8e2dc, #bde0fe);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    color: var(--main-text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Main Container */
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    background-color: var(--card-bg);
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--subtle-border);
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--subtle-border);
+}
+
+header h2 {
+    color: var(--main-text);
+    font-size: 2rem;
+    margin: 0;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+/* Scoreboard Section */
+.scoreboard {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px 0;
+    margin-bottom: 15px;    
+}
+
+.score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    padding: 10px;
+    width: 110px;       
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.score:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--glow-shadow);
+}
+
+.score span:first-child {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    background: linear-gradient(to right, var(--accent-blue), var(--accent-mint));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.score span:last-child {
+    font-size: 1rem;
+    color: var(--secondary-text);
+    font-weight: 500;
+}
+
+/* Result Message */
+.result {
+    text-align: center;
+    margin: 15px 0;
+    padding: 10px;
+    border-bottom: 1px solid var(--subtle-border);
+}
+
+#result-message {
+    font-size: 1.5rem;
+    color: var(--main-text);
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    min-width: 60%;
+    transition: all 0.3s ease;
+}
+
+/* Choices Section */
+.choices {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+.choice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.choice:hover {
+    background-color: var(--highlight-bg);
+    transform: translateY(-8px);
+    box-shadow: var(--card-shadow);
+}
+
+.choices span {
+    font-size: 1.2rem;
+    color: var(--main-text);
+    margin-top: 5px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+img {
+    width: 80px;
+    height: 80px;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+img:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.15));
+    cursor: pointer;
+}
+
+/* Game History Section - Light, Airy Redesign */
+.game-history {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--subtle-border);
+    position: relative;
+}
+
+.game-history::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, var(--accent-blue), var(--accent-mint));
+    border-radius: 16px 16px 0 0;
+}
+
+.game-history h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: var(--main-text);
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--subtle-border);
+    padding-bottom: 10px;
+}
+
+.history-table th, 
+.history-table td {
+    padding: 8px;
+    font-size: 0.9rem;
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 10px;
+}
+
+.history-table th { 
+    text-align: left;
+    color: var(--secondary-text);
+    font-weight: 600;
+    border-bottom: 1px solid var(--subtle-border);
+    letter-spacing: 0.5px;
+}
+
+.history-table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid var(--subtle-border);
+    color: var(--main-text);
+}
+
+.history-table tr {
+    transition: background-color 0.2s ease;
+}
+
+.history-table tr:hover {
+    background-color: var(--highlight-bg);
+}
+
+.history-table td.win {
+    color: var(--win-color);
+    font-weight: 500;
+}
+
+.history-table td.lose {
+    color: var(--lose-color);
+    font-weight: 500;
+}
+
+.history-table td.draw {
+    color: var(--draw-color);
+    font-weight: 500;
+}
+
+#clear-history {
+    display: block;
+    margin: 10px auto 0;
+    padding: 8px 15px;
+    background-color: var(--accent-blue);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0,9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+#clear-history:hover {
+    background-color: var(--hover-button);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+#clear-history:active {
+    transform: translateY(-1px);
+}
+
