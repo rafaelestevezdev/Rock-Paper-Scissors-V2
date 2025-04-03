@@ -1,34 +1,35 @@
-/* CSS Document */
+/* Documento CSS */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* Refined Pastel Color Palette for Minimalism */
-:root {
-    /* Base colors - soft pastels */
-    --background: #f8f9fa;           /* Very light background */
-    --main-text: #495057;            /* Soft dark gray for text */
-    --secondary-text: #6c757d;       /* Lighter gray for secondary text */
-    --accent-blue: #90caf9;          /* Soft pastel blue */
-    --accent-mint: #a8e6cf;          /* Soft mint green */
-    
-    /* Hover states */
-    --hover-button: #81c3f3;         /* Slightly deeper blue for hover */
 
-    /* Status colors - soft pastels */
-    --win-color: #a8e6cf;            /* Pastel green for wins */
-    --lose-color: #ffafcc;           /* Pastel pink for losses */
-    --draw-color: #fdffb6;           /* Pastel yellow for draws */
+:root {
     
-    /* Backgrounds */
-    --card-bg: #ffffff;              /* Pure white card background */
-    --highlight-bg: rgba(144, 202, 249, 0.05);  /* Very subtle highlight */
+    --background: #f8f9fa;           
+    --main-text: #495057;            
+    --secondary-text: #6c757d;       
+    --accent-blue: #90caf9;          
+    --accent-mint: #a8e6cf;          
     
-    /* Borders and shadows */
-    --subtle-border: rgba(108, 117, 125, 0.1);  /* Subtle borders */
-    --glow-shadow: 0 0 15px rgba(144, 202, 249, 0.2); /* Subtle blue glow */
-    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Soft shadow */
+    
+    --hover-button: #81c3f3;         
+
+    
+    --win-color: #a8e6cf;            
+    --lose-color: #ffafcc;           
+    --draw-color: #fdffb6;           
+    
+  
+    --card-bg: #ffffff;             
+    --highlight-bg: rgba(144, 202, 249, 0.05);  
+    
+   
+    --subtle-border: rgba(108, 117, 125, 0.1);  
+    --glow-shadow: 0 0 15px rgba(144, 202, 249, 0.2); 
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); 
 }
 
-/* Base Styles */
+
+/* Estilos globales */
 * {
     margin: 0;
     padding: 0;
@@ -45,13 +46,15 @@ body {
     min-height: 100vh;
 }
 
+/* Animación de gradiente */
 @keyframes gradient {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* Main Container */
+
+/* Contenedor principal */
 .container {
     max-width: 900px;
     margin: 20px auto;
@@ -63,7 +66,8 @@ body {
     border: 1px solid var(--subtle-border);
 }
 
-/* Header Styling */
+
+/* Encabezado */
 header {
     text-align: center;
     margin-bottom: 15px;
@@ -79,7 +83,8 @@ header h2 {
     font-weight: 600;
 }
 
-/* Scoreboard Section */
+
+/* Marcador */
 .scoreboard {
     display: flex;
     justify-content: space-around;
@@ -123,7 +128,7 @@ header h2 {
     font-weight: 500;
 }
 
-/* Result Message */
+/* Mensaje de Resultado */
 .result {
     text-align: center;
     margin: 15px 0;
@@ -141,7 +146,8 @@ header h2 {
     transition: all 0.3s ease;
 }
 
-/* Choices Section */
+
+/* Opciones de juego */
 .choices {
     display: flex;
     justify-content: space-around;
@@ -174,6 +180,7 @@ header h2 {
     font-weight: 500;
 }
 
+/* Estilos para imágenes */
 img {
     width: 80px;
     height: 80px;
@@ -187,7 +194,8 @@ img:hover {
     cursor: pointer;
 }
 
-/* Game History Section - Light, Airy Redesign */
+
+/* Historial de juego */
 .game-history {
     margin-top: 20px;
     padding: 15px;
@@ -220,6 +228,7 @@ img:hover {
     padding-bottom: 10px;
 }
 
+/* Tabla de historial */
 .history-table th, 
 .history-table td {
     padding: 8px;
@@ -270,6 +279,7 @@ img:hover {
     font-weight: 500;
 }
 
+/* Botón para limpiar historial */
 #clear-history {
     display: block;
     margin: 10px auto 0;
